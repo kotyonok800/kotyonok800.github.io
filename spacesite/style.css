@@ -1,0 +1,137 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header"
+     "main main main"
+      "content_1 content_2 content_3"
+      "content_1 content_2 content_6"
+      "content_4 content_2 content_6"
+      "content_4 content_5 content_6";
+    grid-gap: 20px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+}
+header > a div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    font-size: 30px;
+    border-radius: 100px;
+    color: white;
+    border: white solid;
+}
+header a{
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    background-color: black;
+}
+nav div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+}
+nav div:hover{
+    background-color: white;
+    color: #262240;
+    cursor: pointer;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+.content_1{
+    grid-area: content_1;
+}
+.content_2{
+    grid-area: content_2;
+}
+.content_3{
+    grid-area: content_3;
+}
+.content_4{
+    grid-area: content_4;
+}
+.content_5{
+    grid-area: content_5;
+}
+.content_6{
+    grid-area: content_6;
+}
+@font-face {
+    font-family: fontsite;
+    src: url(font/BLACK\ BUBBLE.ttf);
+}
+*{
+    font-family: fontsite;
+}
+body{
+    background: url(img/bg.jpg);
+    color: white;
+    background-size: cover;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: main;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+.content_1, .content_2, .content_3, .content_4, .content_5, .content_6{
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
+img{
+    width: 100%;
+}
+.main img{
+    width: 70%;
+}
+@media (min-width: 640px) and (max-width: 790px) {
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header header"
+        "main main"
+         "content_1 content_4"
+         "content_1 content_4"
+         "content_2 content_6"
+         "content_2 content_6"
+         "content_2 content_6"
+         "content_3 content_5";
+    }
+    nav div{
+        width: 105px;
+    }
+}
+@media (max-width: 639px) {
+    nav, .main img{
+        display: none;
+    }
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+        "main"
+        "content_1"
+        "content_2"
+        "content_3"
+        "content_4"
+        "content_5"
+        "content_6";
+    }
+    .main{
+        font-size: 20px;
+    }
+}
